@@ -4,13 +4,435 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>💾 HackMaster Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        /* Reset et styles généraux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            background: #1a1a1a;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #0f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            background: #111;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 0 15px #0f0;
+            border-bottom: 2px solid #0f0;
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-shadow: 0 0 10px #0f0;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            font-size: 1.4rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('https://via.placeholder.com/1920x1080?text=Cyber+Background') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            text-shadow: 0 0 15px #0f0;
+            animation: glitchText 2s infinite;
+        }
+
+        @keyframes glitchText {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, 0); }
+            80% { transform: translate(2px, 0); }
+            100% { transform: translate(0); }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin: 20px 0;
+        }
+
+        .cta {
+            padding: 12px 24px;
+            background: #0f0;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 5px #0f0; }
+            50% { box-shadow: 0 0 20px #0f0; }
+            100% { box-shadow: 0 0 5px #0f0; }
+        }
+
+        .cta:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px #0f0;
+        }
+
+        /* Sections générales */
+        section {
+            padding: 80px 20px;
+            margin: 50px 10px;
+            background: #111;
+            border-radius: 15px;
+            box-shadow: 0 0 25px #0f0;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            border-bottom: 3px solid #0f0;
+            padding-bottom: 15px;
+            text-shadow: 0 0 10px #0f0;
+            margin-bottom: 40px;
+        }
+
+        /* Compétences */
+        .competences-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .categorie {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #0f0;
+            transition: transform 0.3s ease;
+        }
+
+        .categorie:hover {
+            transform: translateY(-10px);
+        }
+
+        .categorie h3 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #0f0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .categorie ul {
+            list-style: none;
+        }
+
+        .categorie li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #333;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .categorie li:hover {
+            background: #0f0;
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #0f0;
+        }
+
+        /* Projets */
+        .projets-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .projet {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #0f0;
+            transition: all 0.3s ease;
+        }
+
+        .projet:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px #0f0;
+        }
+
+        .projet img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .projet h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .projet p {
+            margin-bottom: 10px;
+        }
+
+        /* Blog */
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        article {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #0f0;
+            transition: all 0.3s ease;
+        }
+
+        article:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px #0f0;
+        }
+
+        article img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        article h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-form {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .blog-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-form input,
+        .blog-form textarea {
+            width: 80%;
+            max-width: 600px;
+            padding: 10px;
+            margin: 10px 0;
+            background: #333;
+            border: 2px solid #0f0;
+            color: #fff;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            border-radius: 5px;
+        }
+
+        .blog-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .blog-form button {
+            padding: 10px 20px;
+            background: #0f0;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .blog-form button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #0f0;
+        }
+
+        /* Galerie */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contact */
+        #contact p {
+            font-size: 1.3rem;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .hack-text {
+            display: inline-block;
+            animation: hackAnim 1s infinite;
+        }
+
+        @keyframes hackAnim {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+
+        .contact-form {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            margin: 10px 0;
+            background: #333;
+            border: 2px solid #0f0;
+            color: #fff;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            border-radius: 5px;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background: #0f0;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #0f0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 1.2rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .competences-container,
+            .projets-container,
+            .blog-container,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Particules d'arrière-plan -->
-    <div class="particles"></div>
-
     <!-- Header avec navigation fixe -->
     <header>
         <h1>💾 HackMaster Portfolio</h1>
@@ -19,19 +441,22 @@
             <a href="#competences">💡 Compétences</a>
             <a href="#projets">🛠️ Projets</a>
             <a href="#blog">📝 Blog</a>
+            <a href="#galerie">🖼️ Galerie</a>
             <a href="#contact">📬 Contact</a>
         </nav>
     </header>
 
     <!-- Section Hero -->
     <section id="accueil" class="hero">
-        <h2>👾 Bienvenue dans le Cyber-Espace !</h2>
-        <p>🔥 Moi, c’est *Abdoul-Aziz Ousmane KABORE*, Ethical Hacker 🌌 et Cybersecurity Analyst Junior 💪. 
-        Avec des titres comme *Best Ethical Hacker H2P 2024* 💻💡 et *Top 2 Ethical Hacker SN 2024* 🎯, 
-        je domine l’offensive security : pentesting, red teaming ⚔️, exploit dev, threat intel 🔍, et forensics 🕵️‍♂️. 
-        Actif dans les CTF, je renforce les systèmes avec des analyses précises 🛡️ et des certifs pro (Microsoft, Cisco, Security Blue Team) ⚡. 
-        Plonge dans mes compétences, projets et articles – hacke ton chemin à travers mon univers ! 🚀</p>
-        <button class="cta">🌟 Explorer maintenant</button>
+        <div class="hero-content">
+            <h2>👾 Bienvenue dans le Cyber-Espace !</h2>
+            <p>🔥 Moi, c’est *HackMaster*, Ethical Hacker 🌌 et Cybersecurity Analyst Junior 💪. 
+            Avec des titres comme *Best Ethical Hacker H2P 2024* 💻💡 et *Top 2 Ethical Hacker SN 2024* 🎯, 
+            je domine l’offensive security : pentesting, red teaming ⚔️, exploit dev, threat intel 🔍, et forensics 🕵️‍♂️. 
+            Actif dans les CTF, je renforce les systèmes avec des analyses précises 🛡️ et des certifs pro (Microsoft, Cisco, Security Blue Team) ⚡. 
+            Plonge dans mes compétences, projets et articles – hacke ton chemin à travers mon univers ! 🚀</p>
+            <button class="cta">🌟 Explorer maintenant</button>
+        </div>
     </section>
 
     <!-- Section Compétences -->
@@ -42,46 +467,29 @@
                 <h3>🔒 Cybersécurité</h3>
                 <ul>
                     <li>🌐 Ethical Hacking & Pentesting</li>
-                    <li>🛡️ Cyber Threat Intelligence (CTI)</li>
-                    <li>🔍 Cyber Threat Hunting (CTH)</li>
+                    <li>🛡️ Cyber Threat Intelligence</li>
+                    <li>🔍 Cyber Threat Hunting</li>
                     <li>🕵️‍♂️ Digital Forensics</li>
                     <li>⚔️ Red Teaming & Exploit Dev</li>
-                    <li>📊 Gestion des Vulnérabilités</li>
-                    <li>🔐 Sécurité Applicative & Cloud</li>
-                    <li>🛑 Réponse aux Incidents</li>
-                    <li>📝 Certifs : Microsoft, Cisco, Blue Team</li>
-                    <li>🌍 Sensibilisation Cyber</li>
                 </ul>
             </div>
             <div class="categorie">
                 <h3>💻 Dev & Tech</h3>
                 <ul>
-                    <li>🌐 HTML/CSS – Web Responsive</li>
-                    <li>⚡ JavaScript – Interactif</li>
-                    <li>🐍 Python – Automatisation</li>
-                    <li>🖥️ Linux & OS Mastery</li>
-                    <li>🛠️ Tools : Nmap, sqlmap</li>
-                    <li>🌐 Web Dev</li>
-                    <li>📊 MS Office</li>
+                    <li>🌐 HTML/CSS</li>
+                    <li>⚡ JavaScript</li>
+                    <li>🐍 Python</li>
+                    <li>🖥️ Linux</li>
+                    <li>🛠️ Tools : Nmap, Burp Suite</li>
                 </ul>
             </div>
             <div class="categorie">
-                <h3>📋 Gestion & Soft Skills</h3>
+                <h3>📋 Soft Skills</h3>
                 <ul>
                     <li>📅 Gestion de Projets</li>
                     <li>🤝 Teamwork</li>
                     <li>🧠 Problem Solving</li>
                     <li>🎤 Communication</li>
-                    <li>🧘 Bien-être</li>
-                </ul>
-            </div>
-            <div class="categorie">
-                <h3>🌟 Bonus</h3>
-                <ul>
-                    <li>🖌️ Design & Infographie</li>
-                    <li>🧑‍🏫 Formation</li>
-                    <li>🔍 Analyse de Menaces</li>
-                    <li>⚙️ Gestion des Vulns</li>
                 </ul>
             </div>
         </div>
@@ -92,13 +500,15 @@
         <h2>🛠️ Missions Hackées</h2>
         <div class="projets-container">
             <div class="projet">
-                <h3>💾 Projet 1 : Pentest Master</h3>
-                <p>🔍 Audit de sécurité avec Nmap et Burp Suite. Résultats : 3 failles critiques patchées !</p>
+                <img src="https://via.placeholder.com/300x200?text=Projet+1" alt="Pentest Master">
+                <h3>💾 Pentest Master</h3>
+                <p>🔍 Audit de sécurité avec Nmap et Burp Suite. 3 failles critiques patchées !</p>
                 <a href="#">🔗 Découvrir</a>
             </div>
             <div class="projet">
-                <h3>⚡ Projet 2 : Exploit Dev</h3>
-                <p>🐍 Script Python pour exploiter une vuln SQL. Démo sur un environnement sandbox.</p>
+                <img src="https://via.placeholder.com/300x200?text=Projet+2" alt="Exploit Dev">
+                <h3>⚡ Exploit Dev</h3>
+                <p>🐍 Script Python pour exploiter une vuln SQL.</p>
                 <a href="#">🔗 Découvrir</a>
             </div>
         </div>
@@ -109,19 +519,119 @@
         <h2>📝 Terminal de Connaissance</h2>
         <div class="blog-container">
             <article>
+                <img src="https://via.placeholder.com/300x200?text=Blog+1" alt="Tuto Wi-Fi">
                 <h3>🖥️ Tuto : Cracker un Wi-Fi</h3>
                 <p>📅 10/10/2024</p>
-                <p>🔐 Guide étape par étape avec Aircrack-ng. Éthique only !</p>
+                <p>🔐 Guide avec Aircrack-ng (éthique only).</p>
                 <a href="#">➡️ Lire</a>
             </article>
             <article>
-                <h3>📡 Article : Threat Intel 101</h3>
+                <img src="https://via.placeholder.com/300x200?text=Blog+2" alt="Threat Intel">
+                <h3>📡 Threat Intel 101</h3>
                 <p>📅 12/10/2024</p>
-                <p>🛡️ Comment collecter des données sur les menaces en 5 étapes.</p>
+                <p>🛡️ Collecte de données sur les menaces.</p>
                 <a href="#">➡️ Lire</a>
             </article>
         </div>
         <div class="blog-form">
             <h3>✍️ Ajouter un Article</h3>
             <input type="text" id="blog-title" placeholder="Titre de l'article">
-            <textarea id="blog-content" placeholder="Écris ton t
+            <textarea id="blog-content" placeholder="Écris ton article ici..."></textarea>
+            <button id="submit-blog">🚀 Publier</button>
+        </div>
+    </section>
+
+    <!-- Section Galerie -->
+    <section id="galerie" class="gallery">
+        <h2>🖼️ Galerie</h2>
+        <img src="https://via.placeholder.com/200?text=CTF" alt="CTF">
+        <img src="https://via.placeholder.com/200?text=Hack" alt="Hack">
+        <img src="https://via.placeholder.com/200?text=Code" alt="Code">
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact">
+        <h2>📬 Pirater ma Boîte Mail</h2>
+        <p>✉️ Email : <span class="hack-text">hackmaster@example.com</span></p>
+        <p>🐙 GitHub : <a href="#">github.com/hackmaster</a></p>
+        <p>🐦 Twitter : <a href="#">@hackmaster</a></p>
+        <p>🔗 LinkedIn : <a href="#">linkedin.com/in/hackmaster</a></p>
+        <form class="contact-form">
+            <input type="text" placeholder="Ton nom" required>
+            <input type="email" placeholder="Ton email" required>
+            <textarea placeholder="Ton message" required></textarea>
+            <button type="submit">📤 Envoyer</button>
+        </form>
+    </section>
+
+    <script>
+        // Défilement fluide pour la navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Bouton CTA vers compétences
+        document.querySelector('.cta').addEventListener('click', () => {
+            document.getElementById('competences').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Animation des compétences au survol
+        document.querySelectorAll('.categorie li').forEach(item => {
+            item.addEventListener('mouseover', () => {
+                item.style.backgroundColor = '#0f0';
+                item.style.color = '#000';
+                item.style.transform = 'scale(1.05)';
+            });
+            item.addEventListener('mouseout', () => {
+                item.style.backgroundColor = '#333';
+                item.style.color = '#fff';
+                item.style.transform = 'scale(1)';
+            });
+        });
+
+        // Ajout dynamique d'articles dans le blog
+        document.getElementById('submit-blog').addEventListener('click', () => {
+            const title = document.getElementById('blog-title').value;
+            const content = document.getElementById('blog-content').value;
+            if (title && content) {
+                const article = document.createElement('article');
+                article.innerHTML = `
+                    <img src="https://via.placeholder.com/300x200?text=${title}" alt="${title}">
+                    <h3>🖥️ ${title}</h3>
+                    <p>📅 ${new Date().toLocaleDateString()}</p>
+                    <p>${content}</p>
+                    <a href="#">➡️ Lire</a>
+                `;
+                document.querySelector('.blog-container').prepend(article);
+                document.getElementById('blog-title').value = '';
+                document.getElementById('blog-content').value = '';
+                article.style.animation = 'fadeInUp 1s ease-out';
+            } else {
+                alert('Remplis le titre et le contenu, hacker !');
+            }
+        });
+
+        // Gestion du formulaire de contact (simulation)
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('💾 Message envoyé dans le cyber-espace !');
+            e.target.reset();
+        });
+
+        // Animation d'entrée des sections au chargement
+        window.addEventListener('load', () => {
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0';
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.animation = 'fadeInUp 1s ease-out';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
