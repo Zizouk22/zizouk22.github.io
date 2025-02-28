@@ -3,52 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
+    <title>💾 HackMaster Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Orbitron&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Particules d'arrière-plan -->
+    <div class="particles"></div>
+
+    <!-- Header avec navigation fixe -->
     <header>
-        <h1>🚀 Mon Portfolio</h1>
+        <h1>💾 HackMaster Portfolio</h1>
         <nav>
             <a href="#accueil">🏠 Accueil</a>
             <a href="#competences">💡 Compétences</a>
             <a href="#projets">🛠️ Projets</a>
+            <a href="#blog">📝 Blog</a>
             <a href="#contact">📬 Contact</a>
         </nav>
     </header>
 
-    <section id="accueil">
-        <h2>👋 Salut !</h2>
-        <p>Je suis [ton nom], [ta profession]. Jete un œil à mes compétences et projets !</p>
+    <!-- Section Hero -->
+    <section id="accueil" class="hero">
+        <h2>👾 Bienvenue dans le Cyber-Espace !</h2>
+        <p>🔥 Moi, c’est *Abdoul-Aziz Ousmane KABORE*, Ethical Hacker 🌌 et Cybersecurity Analyst Junior 💪. 
+        Avec des titres comme *Best Ethical Hacker H2P 2024* 💻💡 et *Top 2 Ethical Hacker SN 2024* 🎯, 
+        je domine l’offensive security : pentesting, red teaming ⚔️, exploit dev, threat intel 🔍, et forensics 🕵️‍♂️. 
+        Actif dans les CTF, je renforce les systèmes avec des analyses précises 🛡️ et des certifs pro (Microsoft, Cisco, Security Blue Team) ⚡. 
+        Plonge dans mes compétences, projets et articles – hacke ton chemin à travers mon univers ! 🚀</p>
+        <button class="cta">🌟 Explorer maintenant</button>
     </section>
 
+    <!-- Section Compétences -->
     <section id="competences">
-        <h2>💡 Mes Compétences</h2>
-        <ul>
-            <li>🌐 HTML/CSS - Sites web stylés et responsives</li>
-            <li>⚡ JavaScript - Animations et interactivité</li>
-            <li>🐍 Python - Scripts et automatisation</li>
-            <!-- Ajoute tes compétences ici -->
-        </ul>
-    </section>
-
-    <section id="projets">
-        <h2>🛠️ Mes Projets</h2>
-        <div class="projet">
-            <h3>Projet 1</h3>
-            <p>📝 Description rapide et compétences utilisées.</p>
-            <a href="lien-vers-projet">🔗 Voir le projet</a>
+        <h2>💡 Arsenal de Compétences</h2>
+        <div class="competences-container">
+            <div class="categorie">
+                <h3>🔒 Cybersécurité</h3>
+                <ul>
+                    <li>🌐 Ethical Hacking & Pentesting</li>
+                    <li>🛡️ Cyber Threat Intelligence (CTI)</li>
+                    <li>🔍 Cyber Threat Hunting (CTH)</li>
+                    <li>🕵️‍♂️ Digital Forensics</li>
+                    <li>⚔️ Red Teaming & Exploit Dev</li>
+                    <li>📊 Gestion des Vulnérabilités</li>
+                    <li>🔐 Sécurité Applicative & Cloud</li>
+                    <li>🛑 Réponse aux Incidents</li>
+                    <li>📝 Certifs : Microsoft, Cisco, Blue Team</li>
+                    <li>🌍 Sensibilisation Cyber</li>
+                </ul>
+            </div>
+            <div class="categorie">
+                <h3>💻 Dev & Tech</h3>
+                <ul>
+                    <li>🌐 HTML/CSS – Web Responsive</li>
+                    <li>⚡ JavaScript – Interactif</li>
+                    <li>🐍 Python – Automatisation</li>
+                    <li>🖥️ Linux & OS Mastery</li>
+                    <li>🛠️ Tools : Nmap, sqlmap</li>
+                    <li>🌐 Web Dev</li>
+                    <li>📊 MS Office</li>
+                </ul>
+            </div>
+            <div class="categorie">
+                <h3>📋 Gestion & Soft Skills</h3>
+                <ul>
+                    <li>📅 Gestion de Projets</li>
+                    <li>🤝 Teamwork</li>
+                    <li>🧠 Problem Solving</li>
+                    <li>🎤 Communication</li>
+                    <li>🧘 Bien-être</li>
+                </ul>
+            </div>
+            <div class="categorie">
+                <h3>🌟 Bonus</h3>
+                <ul>
+                    <li>🖌️ Design & Infographie</li>
+                    <li>🧑‍🏫 Formation</li>
+                    <li>🔍 Analyse de Menaces</li>
+                    <li>⚙️ Gestion des Vulns</li>
+                </ul>
+            </div>
         </div>
-        <!-- Ajoute d'autres projets ici -->
     </section>
 
-    <section id="contact">
-        <h2>📬 Me Contacter</h2>
-        <p>✉️ Email : tonemail@example.com</p>
-        <p>🐙 GitHub : <a href="https://github.com/tonnomdutilisateur">tonnomdutilisateur</a></p>
+    <!-- Section Projets -->
+    <section id="projets">
+        <h2>🛠️ Missions Hackées</h2>
+        <div class="projets-container">
+            <div class="projet">
+                <h3>💾 Projet 1 : Pentest Master</h3>
+                <p>🔍 Audit de sécurité avec Nmap et Burp Suite. Résultats : 3 failles critiques patchées !</p>
+                <a href="#">🔗 Découvrir</a>
+            </div>
+            <div class="projet">
+                <h3>⚡ Projet 2 : Exploit Dev</h3>
+                <p>🐍 Script Python pour exploiter une vuln SQL. Démo sur un environnement sandbox.</p>
+                <a href="#">🔗 Découvrir</a>
+            </div>
+        </div>
     </section>
 
-    <script src="js/script.js"></script>
-</body>
-</html>
+    <!-- Section Blog -->
+    <section id="blog">
+        <h2>📝 Terminal de Connaissance</h2>
+        <div class="blog-container">
+            <article>
+                <h3>🖥️ Tuto : Cracker un Wi-Fi</h3>
+                <p>📅 10/10/2024</p>
+                <p>🔐 Guide étape par étape avec Aircrack-ng. Éthique only !</p>
+                <a href="#">➡️ Lire</a>
+            </article>
+            <article>
+                <h3>📡 Article : Threat Intel 101</h3>
+                <p>📅 12/10/2024</p>
+                <p>🛡️ Comment collecter des données sur les menaces en 5 étapes.</p>
+                <a href="#">➡️ Lire</a>
+            </article>
+        </div>
+        <div class="blog-form">
+            <h3>✍️ Ajouter un Article</h3>
+            <input type="text" id="blog-title" placeholder="Titre de l'article">
+            <textarea id="blog-content" placeholder="Écris ton t
