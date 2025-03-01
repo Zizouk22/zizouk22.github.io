@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Professionnel</title>
+    <title>Portfolio Dynamique</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -16,25 +16,25 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: #f5f5f5;
+            background: #e6f0fa; /* Fond clair et dynamique */
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         a {
-            color: #007acc;
+            color: #0066cc; /* Bleu vif */
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #005f99;
+            color: #003366; /* Bleu plus sombre au survol */
         }
 
         /* Header */
         header {
-            background: #1a1a2e;
+            background: #004080; /* Bleu profond pour le header */
             padding: 20px;
             position: fixed;
             width: 100%;
@@ -77,13 +77,13 @@
         }
 
         nav a:hover {
-            color: #007acc;
+            color: #66b3ff; /* Bleu clair au survol */
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: url('https://via.placeholder.com/1920x1080?text=Professional+Background') center/cover no-repeat;
+            background: url('https://via.placeholder.com/1920x1080?text=Dynamic+Background') center/cover no-repeat;
             position: relative;
             display: flex;
             align-items: center;
@@ -98,7 +98,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.4); /* Overlay léger */
         }
 
         .hero-content {
@@ -121,7 +121,7 @@
 
         .cta {
             padding: 12px 24px;
-            background: #007acc;
+            background: #0066cc; /* Bleu vif pour le bouton */
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -131,7 +131,7 @@
         }
 
         .cta:hover {
-            background: #005f99;
+            background: #003366; /* Bleu sombre au survol */
         }
 
         /* Sections générales */
@@ -146,7 +146,7 @@
         h2 {
             font-size: 2.5rem;
             text-align: center;
-            color: #1a1a2e;
+            color: #004080; /* Bleu profond pour les titres */
             margin-bottom: 40px;
         }
 
@@ -159,7 +159,7 @@
         }
 
         .categorie {
-            background: #f5f5f5;
+            background: #f2f9ff; /* Fond bleu très clair */
             padding: 20px;
             border-radius: 10px;
             transition: transform 0.3s ease;
@@ -171,18 +171,14 @@
 
         .categorie h3 {
             font-size: 1.8rem;
-            color: #007acc;
+            color: #0066cc; /* Bleu vif pour les sous-titres */
             margin-bottom: 15px;
-        }
-
-        .categorie ul {
-            list-style: none;
         }
 
         .categorie li {
             margin: 10px 0;
             padding: 10px;
-            background: #e0e0e0;
+            background: #cce6ff; /* Bleu clair pour les items */
             border-radius: 5px;
         }
 
@@ -194,7 +190,7 @@
         }
 
         .projet {
-            background: #f5f5f5;
+            background: #f2f9ff;
             padding: 20px;
             border-radius: 10px;
             transition: transform 0.3s ease;
@@ -218,7 +214,7 @@
         }
 
         article {
-            background: #f5f5f5;
+            background: #f2f9ff;
             padding: 20px;
             border-radius: 10px;
             transition: transform 0.3s ease;
@@ -254,7 +250,7 @@
         .blog-form button,
         .avis-form button {
             padding: 10px 20px;
-            background: #007acc;
+            background: #0066cc;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -263,10 +259,10 @@
 
         .blog-form button:hover,
         .avis-form button:hover {
-            background: #005f99;
+            background: #003366;
         }
 
-        /* Modal pour articles */
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -335,7 +331,7 @@
 
         .contact-form button {
             padding: 10px 20px;
-            background: #007acc;
+            background: #0066cc;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -384,7 +380,7 @@
     <section id="accueil" class="hero">
         <div class="hero-content">
             <h2>Bienvenue</h2>
-            <p>Je suis [Ton Nom], passionné par [ton domaine]. Découvrez mes compétences, projets et articles.</p>
+            <p>Je suis [Ton Nom], passionné par [ton domaine]. Découvre mes compétences, projets et articles.</p>
             <button class="cta">Explorer</button>
         </div>
     </section>
@@ -475,7 +471,7 @@
     <!-- Modal -->
     <div id="modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal">×</span>
             <div id="modal-body"></div>
         </div>
     </div>
