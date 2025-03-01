@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💾 Mr KABO Portfolio</title>
+    <title>Portfolio Professionnel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Reset et styles généraux */
         * {
@@ -15,60 +15,75 @@
         }
 
         body {
-            font-family: 'VT323', monospace;
-            background: #1a1a1a;
-            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            background: #f5f5f5;
+            color: #333;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         a {
-            color: #0f0;
+            color: #007acc;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #fff;
+            color: #005f99;
         }
 
         /* Header */
         header {
-            background: #111;
+            background: #1a1a2e;
             padding: 20px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 0 15px #0f0;
-            border-bottom: 2px solid #0f0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            transition: transform 0.5s ease;
+            transform-style: preserve-3d;
+        }
+
+        .profile-pic:hover {
+            transform: rotateY(180deg);
         }
 
         header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            text-shadow: 0 0 10px #0f0;
-        }
-
-        nav {
-            margin-top: 10px;
+            font-size: 2rem;
+            color: #fff;
         }
 
         nav a {
             margin: 0 15px;
-            font-size: 1.4rem;
-            transition: transform 0.3s ease, color 0.3s ease;
+            font-size: 1.2rem;
+            color: #fff;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            transform: scale(1.1);
-            color: #fff;
+            color: #007acc;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: url('https://via.placeholder.com/1920x1080?text=Cyber+Background') center/cover no-repeat;
+            background: url('https://via.placeholder.com/1920x1080?text=Professional+Background') center/cover no-repeat;
             position: relative;
             display: flex;
             align-items: center;
@@ -83,7 +98,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .hero-content {
@@ -93,71 +108,45 @@
         }
 
         .hero h2 {
-            font-family: 'Orbitron', sans-serif;
             font-size: 3rem;
-            text-shadow: 0 0 15px #0f0;
-            animation: glitchText 2s infinite;
-        }
-
-        @keyframes glitchText {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(2px, -2px); }
-            60% { transform: translate(-2px, 0); }
-            80% { transform: translate(2px, 0); }
-            100% { transform: translate(0); }
+            color: #fff;
+            margin-bottom: 20px;
         }
 
         .hero p {
             font-size: 1.3rem;
-            margin: 20px 0;
+            color: #fff;
+            margin-bottom: 30px;
         }
 
         .cta {
             padding: 12px 24px;
-            background: #0f0;
-            color: #000;
+            background: #007acc;
+            color: #fff;
             border: none;
             border-radius: 5px;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 5px #0f0; }
-            50% { box-shadow: 0 0 20px #0f0; }
-            100% { box-shadow: 0 0 5px #0f0; }
+            transition: background 0.3s ease;
         }
 
         .cta:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 25px #0f0;
+            background: #005f99;
         }
 
         /* Sections générales */
         section {
             padding: 80px 20px;
             margin: 50px 10px;
-            background: #111;
-            border-radius: 15px;
-            box-shadow: 0 0 25px #0f0;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(50px); }
-            100% { opacity: 1; transform: translateY(0); }
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
-            font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
             text-align: center;
-            border-bottom: 3px solid #0f0;
-            padding-bottom: 15px;
-            text-shadow: 0 0 10px #0f0;
+            color: #1a1a2e;
             margin-bottom: 40px;
         }
 
@@ -170,21 +159,19 @@
         }
 
         .categorie {
-            background: #222;
+            background: #f5f5f5;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 15px #0f0;
             transition: transform 0.3s ease;
         }
 
         .categorie:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
 
         .categorie h3 {
             font-size: 1.8rem;
-            border-bottom: 2px solid #0f0;
-            padding-bottom: 10px;
+            color: #007acc;
             margin-bottom: 15px;
         }
 
@@ -195,16 +182,8 @@
         .categorie li {
             margin: 10px 0;
             padding: 10px;
-            background: #333;
+            background: #e0e0e0;
             border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .categorie li:hover {
-            background: #0f0;
-            color: #000;
-            transform: scale(1.05);
-            box-shadow: 0 0 15px #0f0;
         }
 
         /* Projets */
@@ -215,31 +194,20 @@
         }
 
         .projet {
-            background: #222;
+            background: #f5f5f5;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 15px #0f0;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .projet:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 25px #0f0;
+            transform: translateY(-5px);
         }
 
         .projet img {
             width: 100%;
             border-radius: 10px;
             margin-bottom: 15px;
-        }
-
-        .projet h3 {
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-        }
-
-        .projet p {
-            margin-bottom: 10px;
         }
 
         /* Blog */
@@ -250,16 +218,14 @@
         }
 
         article {
-            background: #222;
+            background: #f5f5f5;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 15px #0f0;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         article:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 25px #0f0;
+            transform: translateY(-5px);
         }
 
         article img {
@@ -268,54 +234,67 @@
             margin-bottom: 15px;
         }
 
-        article h3 {
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-        }
-
-        .blog-form {
+        .blog-form, .avis-form {
             margin-top: 40px;
             text-align: center;
         }
 
-        .blog-form h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
         .blog-form input,
-        .blog-form textarea {
+        .blog-form textarea,
+        .avis-form textarea {
             width: 80%;
             max-width: 600px;
             padding: 10px;
             margin: 10px 0;
-            background: #333;
-            border: 2px solid #0f0;
-            color: #fff;
-            font-family: 'VT323', monospace;
-            font-size: 1.2rem;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 1.2rem;
         }
 
-        .blog-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        .blog-form button {
+        .blog-form button,
+        .avis-form button {
             padding: 10px 20px;
-            background: #0f0;
-            color: #000;
+            background: #007acc;
+            color: #fff;
             border: none;
             border-radius: 5px;
-            font-size: 1.2rem;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
 
-        .blog-form button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px #0f0;
+        .blog-form button:hover,
+        .avis-form button:hover {
+            background: #005f99;
+        }
+
+        /* Modal pour articles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 700px;
+            width: 90%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         /* Galerie */
@@ -333,26 +312,10 @@
         }
 
         .gallery img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         /* Contact */
-        #contact p {
-            font-size: 1.3rem;
-            margin: 15px 0;
-            text-align: center;
-        }
-
-        .hack-text {
-            display: inline-block;
-            animation: hackAnim 1s infinite;
-        }
-
-        @keyframes hackAnim {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(5px); }
-        }
-
         .contact-form {
             margin-top: 30px;
             display: flex;
@@ -366,271 +329,248 @@
             max-width: 500px;
             padding: 10px;
             margin: 10px 0;
-            background: #333;
-            border: 2px solid #0f0;
-            color: #fff;
-            font-family: 'VT323', monospace;
-            font-size: 1.2rem;
+            border: 1px solid #ccc;
             border-radius: 5px;
-        }
-
-        .contact-form textarea {
-            height: 120px;
-            resize: vertical;
         }
 
         .contact-form button {
             padding: 10px 20px;
-            background: #0f0;
-            color: #000;
+            background: #007acc;
+            color: #fff;
             border: none;
             border-radius: 5px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
 
-        .contact-form button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px #0f0;
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-content {
+                margin-bottom: 10px;
             }
 
             nav a {
-                margin: 0 10px;
-                font-size: 1.2rem;
+                margin: 5px;
+                font-size: 1rem;
             }
 
             .hero h2 {
                 font-size: 2rem;
             }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .cta {
-                padding: 10px 20px;
-                font-size: 1rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .competences-container,
-            .projets-container,
-            .blog-container,
-            .gallery {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header avec navigation fixe -->
+    <!-- Header -->
     <header>
-        <h1>💾 Mr KABO Portfolio</h1>
+        <div class="header-content">
+            <img src="https://via.placeholder.com/50?text=Photo1" class="profile-pic" alt="Ton image" data-alt-src="https://via.placeholder.com/50?text=Photo2">
+            <h1>Portfolio de [Ton Nom]</h1>
+        </div>
         <nav>
-            <a href="#accueil">🏠 Accueil</a>
-            <a href="#competences">💡 Compétences</a>
-            <a href="#projets">🛠️ Projets</a>
-            <a href="#blog">📝 Blog</a>
-            <a href="#galerie">🖼️ Galerie</a>
-            <a href="#contact">📬 Contact</a>
+            <a href="#accueil">Accueil</a>
+            <a href="#competences">Compétences</a>
+            <a href="#projets">Projets</a>
+            <a href="#blog">Blog</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <!-- Section Hero -->
+    <!-- Accueil -->
     <section id="accueil" class="hero">
         <div class="hero-content">
-            <h2>👾 Bienvenue dans le Cyber-Espace !</h2>
-            <p>🔥 Moi, c’est Mr KABO, Ethical Hacker 🌌 et Cybersecurity Analyst Junior 💪. 
-            Avec des titres comme Best Ethical Hacker H2P 2024 💻💡 et Top 2 Ethical Hacker SN 2024 🎯, 
-            je domine l’offensive security : pentesting, red teaming ⚔️, exploit dev, threat intel 🔍, et forensics 🕵️‍♂️. 
-            Actif dans les CTF, je renforce les systèmes avec des analyses précises 🛡️ et des certifs pro (Microsoft, Cisco, Security Blue Team) ⚡. 
-            Plonge dans mes compétences, projets et articles – hacke ton chemin à travers mon univers ! 🚀</p>
-            <button class="cta">🌟 Explorer maintenant</button>
+            <h2>Bienvenue</h2>
+            <p>Je suis [Ton Nom], passionné par [ton domaine]. Découvrez mes compétences, projets et articles.</p>
+            <button class="cta">Explorer</button>
         </div>
     </section>
 
-    <!-- Section Compétences -->
+    <!-- Compétences -->
     <section id="competences">
-        <h2>💡 Arsenal de Compétences</h2>
+        <h2>Compétences</h2>
         <div class="competences-container">
             <div class="categorie">
-                <h3>🔒 Cybersécurité</h3>
+                <h3>Techniques</h3>
                 <ul>
-                    <li>🌐 Ethical Hacking & Pentesting</li>
-                    <li>🛡️ Cyber Threat Intelligence</li>
-                    <li>🔍 Cyber Threat Hunting</li>
-                    <li>🕵️‍♂️ Digital Forensics</li>
-                    <li>⚔️ Red Teaming & Exploit Dev</li>
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
                 </ul>
             </div>
             <div class="categorie">
-                <h3>💻 Dev & Tech</h3>
+                <h3>Soft Skills</h3>
                 <ul>
-                    <li>🌐 HTML/CSS</li>
-                    <li>⚡ JavaScript</li>
-                    <li>🐍 Python</li>
-                    <li>🖥️ Linux</li>
-                    <li>🛠️ Tools : Nmap, Burp Suite</li>
-                </ul>
-            </div>
-            <div class="categorie">
-                <h3>📋 Soft Skills</h3>
-                <ul>
-                    <li>📅 Gestion de Projets</li>
-                    <li>🤝 Teamwork</li>
-                    <li>🧠 Problem Solving</li>
-                    <li>🎤 Communication</li>
+                    <li>Gestion de projet</li>
+                    <li>Communication</li>
+                    <li>Travail d'équipe</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Section Projets -->
+    <!-- Projets -->
     <section id="projets">
-        <h2>🛠️ Missions Hackées</h2>
+        <h2>Projets</h2>
         <div class="projets-container">
             <div class="projet">
-                <img src="https://via.placeholder.com/300x200?text=Projet+1" alt="Pentest Master">
-                <h3>💾 Pentest Master</h3>
-                <p>🔍 Audit de sécurité avec Nmap et Burp Suite. 3 failles critiques patchées !</p>
-                <a href="#">🔗 Découvrir</a>
-            </div>
-            <div class="projet">
-                <img src="https://via.placeholder.com/300x200?text=Projet+2" alt="Exploit Dev">
-                <h3>⚡ Exploit Dev</h3>
-                <p>🐍 Script Python pour exploiter une vuln SQL.</p>
-                <a href="#">🔗 Découvrir</a>
+                <img src="https://via.placeholder.com/300x200?text=Projet+1" alt="Projet 1">
+                <h3>Projet 1</h3>
+                <p>Description courte.</p>
+                <a href="#" class="open-modal" data-content="Détails complets du Projet 1">Découvrir</a>
             </div>
         </div>
     </section>
 
-    <!-- Section Blog -->
+    <!-- Blog -->
     <section id="blog">
-        <h2>📝 Terminal de Connaissance</h2>
+        <h2>Blog</h2>
         <div class="blog-container">
             <article>
-                <img src="https://via.placeholder.com/300x200?text=Blog+1" alt="Tuto Wi-Fi">
-                <h3>🖥️ Tuto : Cracker un Wi-Fi</h3>
-                <p>📅 10/10/2024</p>
-                <p>🔐 Guide avec Aircrack-ng (éthique only).</p>
-                <a href="#">➡️ Lire</a>
-            </article>
-            <article>
-                <img src="https://via.placeholder.com/300x200?text=Blog+2" alt="Threat Intel">
-                <h3>📡 Threat Intel 101</h3>
-                <p>📅 12/10/2024</p>
-                <p>🛡️ Collecte de données sur les menaces.</p>
-                <a href="#">➡️ Lire</a>
+                <img src="https://via.placeholder.com/300x200?text=Article+1" alt="Article 1">
+                <h3>Article 1</h3>
+                <p>Résumé de l'article.</p>
+                <a href="#" class="open-modal" data-content="Contenu complet de l'article 1">Lire plus</a>
             </article>
         </div>
+
+        <!-- Formulaire d'ajout d'article -->
         <div class="blog-form">
-            <h3>✍️ Ajouter un Article</h3>
-            <input type="text" id="blog-title" placeholder="Titre de l'article">
-            <textarea id="blog-content" placeholder="Écris ton article ici..."></textarea>
-            <button id="submit-blog">🚀 Publier</button>
+            <h3>Ajouter un Article</h3>
+            <input type="password" id="password" placeholder="Mot de passe">
+            <input type="text" id="blog-title" placeholder="Titre">
+            <input type="file" id="blog-image" accept="image/*">
+            <textarea id="blog-content" placeholder="Contenu"></textarea>
+            <button id="submit-blog">Publier</button>
+        </div>
+
+        <!-- Laisser un avis -->
+        <div class="avis-form">
+            <h3>Laisser un avis</h3>
+            <textarea id="avis-content" placeholder="Ton avis ici..."></textarea>
+            <button id="submit-avis">Envoyer</button>
         </div>
     </section>
 
-    <!-- Section Galerie -->
+    <!-- Galerie -->
     <section id="galerie" class="gallery">
-        <h2>🖼️ Galerie</h2>
-        <img src="https://via.placeholder.com/200?text=CTF" alt="CTF">
-        <img src="https://via.placeholder.com/200?text=Hack" alt="Hack">
-        <img src="https://via.placeholder.com/200?text=Code" alt="Code">
+        <h2>Galerie</h2>
+        <img src="https://via.placeholder.com/200?text=Image+1" alt="Image 1">
     </section>
 
-    <!-- Section Contact -->
+    <!-- Contact -->
     <section id="contact">
-        <h2>📬 Pirater ma Boîte Mail</h2>
-        <p>✉️ Email : <span class="hack-text">hackmaster@example.com</span></p>
-        <p>🐙 GitHub : <a href="#">github.com/hackmaster</a></p>
-        <p>🐦 Twitter : <a href="#">@hackmaster</a></p>
-        <p>🔗 LinkedIn : <a href="#">linkedin.com/in/hackmaster</a></p>
+        <h2>Contact</h2>
         <form class="contact-form">
-            <input type="text" placeholder="Ton nom" required>
-            <input type="email" placeholder="Ton email" required>
-            <textarea placeholder="Ton message" required></textarea>
-            <button type="submit">📤 Envoyer</button>
+            <input type="text" placeholder="Nom" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Envoyer</button>
         </form>
     </section>
 
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
     <script>
-        // Défilement fluide pour la navigation
+        // Défilement fluide
         document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', e => {
                 e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // Bouton CTA vers compétences
+        // Bouton CTA
         document.querySelector('.cta').addEventListener('click', () => {
             document.getElementById('competences').scrollIntoView({ behavior: 'smooth' });
         });
 
-        // Animation des compétences au survol
-        document.querySelectorAll('.categorie li').forEach(item => {
-            item.addEventListener('mouseover', () => {
-                item.style.backgroundColor = '#0f0';
-                item.style.color = '#000';
-                item.style.transform = 'scale(1.05)';
-            });
-            item.addEventListener('mouseout', () => {
-                item.style.backgroundColor = '#333';
-                item.style.color = '#fff';
-                item.style.transform = 'scale(1)';
-            });
+        // Rotation de l'image personnelle
+        const profilePic = document.querySelector('.profile-pic');
+        profilePic.addEventListener('mouseover', () => {
+            const altSrc = profilePic.getAttribute('data-alt-src');
+            profilePic.src = altSrc;
+        });
+        profilePic.addEventListener('mouseout', () => {
+            profilePic.src = 'https://via.placeholder.com/50?text=Photo1';
         });
 
-        // Ajout dynamique d'articles dans le blog
+        // Gestion des articles
+        const correctPassword = 'Github#Savie@226';
         document.getElementById('submit-blog').addEventListener('click', () => {
+            const password = document.getElementById('password').value;
+            if (password !== correctPassword) {
+                alert('Mot de passe incorrect !');
+                return;
+            }
+
             const title = document.getElementById('blog-title').value;
             const content = document.getElementById('blog-content').value;
-            if (title && content) {
-                const article = document.createElement('article');
-                article.innerHTML = `
-                    <img src="https://via.placeholder.com/300x200?text=${title}" alt="${title}">
-                    <h3>🖥️ ${title}</h3>
-                    <p>📅 ${new Date().toLocaleDateString()}</p>
-                    <p>${content}</p>
-                    <a href="#">➡️ Lire</a>
-                `;
-                document.querySelector('.blog-container').prepend(article);
-                document.getElementById('blog-title').value = '';
-                document.getElementById('blog-content').value = '';
-                article.style.animation = 'fadeInUp 1s ease-out';
+            const imageFile = document.getElementById('blog-image').files[0];
+
+            if (title && content && imageFile) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const article = document.createElement('article');
+                    article.innerHTML = `
+                        <img src="${e.target.result}" alt="${title}">
+                        <h3>${title}</h3>
+                        <p>${content.substring(0, 100)}...</p>
+                        <a href="#" class="open-modal" data-content="${content}">Lire plus</a>
+                    `;
+                    document.querySelector('.blog-container').prepend(article);
+                    resetBlogForm();
+                };
+                reader.readAsDataURL(imageFile);
             } else {
-                alert('Remplis le titre et le contenu, hacker !');
+                alert('Remplis tous les champs !');
             }
         });
 
-        // Gestion du formulaire de contact (simulation)
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('💾 Message envoyé dans le cyber-espace !');
-            e.target.reset();
+        function resetBlogForm() {
+            document.getElementById('password').value = '';
+            document.getElementById('blog-title').value = '';
+            document.getElementById('blog-content').value = '';
+            document.getElementById('blog-image').value = '';
+        }
+
+        // Gestion des avis
+        document.getElementById('submit-avis').addEventListener('click', () => {
+            const avis = document.getElementById('avis-content').value;
+            if (avis) {
+                alert('Avis envoyé : ' + avis);
+                document.getElementById('avis-content').value = '';
+            }
         });
 
-        // Animation d'entrée des sections au chargement
-        window.addEventListener('load', () => {
-            document.querySelectorAll('section').forEach(section => {
-                section.style.opacity = '0';
-                setTimeout(() => {
-                    section.style.opacity = '1';
-                    section.style.animation = 'fadeInUp 1s ease-out';
-                }, 100);
-            });
+        // Gestion des modals
+        document.addEventListener('click', e => {
+            if (e.target.classList.contains('open-modal')) {
+                e.preventDefault();
+                const content = e.target.getAttribute('data-content');
+                document.getElementById('modal-body').innerText = content;
+                document.getElementById('modal').style.display = 'flex';
+            }
+        });
+
+        document.querySelector('.close-modal').addEventListener('click', () => {
+            document.getElementById('modal').style.display = 'none';
+        });
+
+        // Formulaire de contact
+        document.querySelector('.contact-form').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Message envoyé !');
+            e.target.reset();
         });
     </script>
 </body>
